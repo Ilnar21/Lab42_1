@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Impact, fantasy;
+    background-color: #212020;
+}
+
+header {
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+.navbar_elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #363434;
+    color: white;
+    padding: 12px 20px;
+    max-width: 1490px;
+    margin: 0 auto;
+}
+
+.navbar_left {
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+}
+.main{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+.albums{
+    text-decoration: none;
+    color: white;
+    margin-left: 70px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: Marker Felt, sans-serif;
+}
+.artists{
+    text-decoration: none;
+    color: white;
+    margin-left: 70px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: Marker Felt, sans-serif;
+}
+
+.navbar_right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar_right input {
+    padding: 5px 10px;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 120px;
+    height: 18px;
+    color: white;
+    margin-right: 20px;
+}
+
+.navbar_right a.profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.navbar_right a.profile-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    padding-right: 20px;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.albums-card:hover .heart-icon {
+    opacity: 1;
+}
+.heart-icon.favorited {
+    color: red;
+}
+
+
+.albums-cont {
+    padding: 50px;
+    background-color: #212020;
+    color: white;
+    max-width: 1500px;
+    margin: auto;
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+}
+.albums-cont h1{
+    margin-top: 50px;
+    font-weight: 900;
+    font-family: Marker Felt, sans-serif;
+    text-align: center;
+}
+
+.albums-cont-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+.albums-card {
+    border-radius: 8px;
+    padding: 20px;
+    flex: 0 0 25%;
+    box-sizing: border-box;
+}
+
+.albums-card img {
+    width: 90%;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+}
+.albums-card img:hover {
+    filter: brightness(0.7);
+}
+.albums-card-description{
+    margin-left: 10px;
+}
+.albums-card-description h3{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+}
+.albums-card-description h6{
+    margin-top: -10px;
+    font-size: 12px;
+    font-weight: 750;
+    font-family: Arial, sans-serif;
+    color: #757373;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-175%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev-btn {
+    left: 5px;
+}
+.next-btn {
+    right: 5px;
+}
+
+.artists-cont {
+    padding: 50px;
+    background-color: #212020;
+    color: white;
+    max-width: 1450px;
+    margin: auto;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+.artists-cont h1{
+    margin-top: 20px;
+    font-weight: 900;
+    font-family: Marker Felt, sans-serif;
+    text-align: center;
+}
+
+.artists-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.artist-card {
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 280px;
+    flex-shrink: 0;
+}
+.artist-card h3 {
+   font-size: 14px;
+    font-weight: 700;
+    margin-top: -5px;
+}
+.artist-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: filter 0.3s ease;
+}
+.artist-card img:hover {
+    filter: brightness(0.7);
+}
+
+.artist-card-description{
+    text-align: center;
+}
+
+.heart-icon-art {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    padding-right: 20px;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.artist-card:hover .heart-icon-art {
+    opacity: 1;
+}
+.heart-icon-art.favorited {
+    color: red;
+}
+
+
+.carousel-btn-art {
+    position: absolute;
+    top: 50%;
+    transform: translateY(1240%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev-btn-art {
+    left: 40px;
+}
+.next-btn-art {
+    right: 1px;
+}
+
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 20px 30px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-top {
+    margin-bottom: 10px;
+    color: #b3b3b3;
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    font-size: 10px;
+}
+.footer-links a{
+    color: white;
+}
+
+.footer-links span {
+    color: #b3b3b3;
+    margin: 0 5px;
+}
+.links{
+    text-decoration: none;
+}
+
+.footer-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 10px;
+}
+.footer-right span{
+    color: #b3b3b3;
+}
+
+footer a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+.russia{
+    color: white;
+}
+.russia:hover{
+    text-decoration: underline;
+}
+.languages{
+    text-decoration: none;
+}
+.languages:hover{
+    text-decoration: underline;
+}
